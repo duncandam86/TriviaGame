@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Trivia Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1> RuPaul's Drag Race Trivia</h1>
+            <h4>"If you don't love yourself, how the hell do you love somebody else?"</h4>
+            <h5> RuPaul Charles</h5>
+        </div>
+        <div class="row text-center">
+            <button id="play">Let's Play!</button>
+            <h3> Time Remaining:
+                <span id="timeRemaining"></span>
+            </h3>
+        </div>
+        <div class="row text-justify" id="question"></div>
+        <br>
+        <div class="row text-justify" id="choices">
+            <h5><button class="multipleChoice" id="answer1" value="0"></button></h5>
+            <h5><button class="multipleChoice" id="answer2" value="1"></button></h5>
+            <h5><button class="multipleChoice" id="answer3" value="2"></button></h5>
+            <h5><button class="multipleChoice" id="answer4" value="3"></button></h5>
+        </div>
+        <br>
+        <div class="row text-center" id="results">
+            <h3>RESULTS:</h3>
+            <p>Correct: <span id="correct"></span></p>
+            <p>Incorrect: <span id="incorrect"></span></p>
+            <p>Unanswer: <span id="unanswer"></span></p>
+            <br>
+        </div>
+        <div class="row text-center" id="results">
+            <button id="restart">Play Again!</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
