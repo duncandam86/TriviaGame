@@ -5,7 +5,7 @@ $(document).ready(function () {
     var inCorrectAnswer = 0;
     var unAnswer;
     var questionIndex = 0;
-    var countDown = 120; //time countdown in second
+    var countDown = 60; //time countdown in second
 
     //make array of object variable for question
     var questions = [{
@@ -82,7 +82,7 @@ $(document).ready(function () {
         answer: "3",
     }, {
         question: "Who is the only queen to ever have been disqualified from RuPaul’s Drag Race?",
-        choices: ["Kelly Mantle", "Naysha Lopez", "William", "Naysha Lopez"],
+        choices: ["Kelly Mantle", "Naysha Lopez", "Willam", "Naysha Lopez"],
         answer: "2",
     }, {
         question: "Who is the best drag queen among all Rupaul's Drag Race contestants?",
@@ -93,7 +93,7 @@ $(document).ready(function () {
     //Make questions and choices appear on the DOM
     function loadQA() {
         // if not all questions were answers 
-        if (questionIndex < questions.length) {
+        if (questionIndex <= questions.length) {
             //display question
             $("#question").html(questions[questionIndex].question);
             // display choices
@@ -127,6 +127,11 @@ $(document).ready(function () {
             $("#timeRemaining").html(countDown);
             // if time remaining is zero, then hide all questions and choices
             if (countDown === -1) {
+                clearInterval(timer);
+                $("#question, #choices, #timeRemaining").hide();
+            }
+
+            else if (questionIndex === questions.length) {
                 clearInterval(timer);
                 $("#question, #choices, #timeRemaining").hide();
             }
