@@ -5,9 +5,9 @@ $(document).ready(function () {
     var inCorrectAnswer = 0;
     var unAnswer;
     var questionIndex = 0;
-    var countDown = 60; //time countdown in second
+    var countDown = 120; //time countdown in second
 
-    //make array of object variable for question
+    //make array of objects for questions
     var questions = [{
         question: "Who won the first season of Drag Race?",
         choices: ["Bebe Zahara Benet", "Nina Flowers", "Chad Michaels", "Carmen Carrera"],
@@ -134,6 +134,8 @@ $(document).ready(function () {
             else if (questionIndex === questions.length) {
                 clearInterval(timer);
                 $("#question, #choices, #timeRemaining").hide();
+                alert("Condragulation You Have Finished Rupaul's Drag Race Trivia 💅")
+                alert("You got" + correctAnswer + "answers and" + inCorrectAnswer + "answers")
             }
             //show score count
             scoreCount();
@@ -151,7 +153,7 @@ $(document).ready(function () {
             //increase correct answer by 1
             correctAnswer++;
             //alert correct answer
-            alert("Yes! You are correct 🎉.");
+            alert("Slay! Your answer is dragstatic 🎉");
             console.log("correct" + correctAnswer);
         }
 
@@ -160,7 +162,7 @@ $(document).ready(function () {
             // increase incorrect answer by 1
             inCorrectAnswer++;
             // alert incorrect answer
-            alert("Oops! You are wrong 👎.");
+            alert("Gurl! You need to educate yo'self 👎");
             console.log("incorrect" + inCorrectAnswer);
         }
 
