@@ -5,7 +5,7 @@ $(document).ready(function () {
     var inCorrectAnswer = 0;
     var unAnswer;
     var questionIndex = 0;
-    var countDown = 120; //time countdown in second
+    var countDown = 90; //time countdown in second
 
     //make array of objects for questions
     var questions = [{
@@ -34,7 +34,7 @@ $(document).ready(function () {
         answer: "2",
     }, {
         question: "Which contestant returns in season 7 after previously sashaying away?",
-        choices: ["Trixe Mattel", "Pearl", "Katya", "Ginger Minj"],
+        choices: ["Trixie Mattel", "Pearl", "Katya", "Ginger Minj"],
         answer: "0",
     }, {
         question: "Back ____?!",
@@ -61,7 +61,7 @@ $(document).ready(function () {
         choices: ["Terminally Delightful", "Delightfully Sweet", "Oddly Delicious", "Pretentiously Over-the-top"],
         answer: "0",
     }, {
-        question: "Sasha Velour's iconic rose petal lipsync was to which Whitney Houston song?",
+        question: "Sasha Velour's iconic rose petal lipsync was to which Whitney Houston's song?",
         choices: ["I Will Always Love You", "So Emotional", "Heartbreak Hotel", "I'm Every Woman"],
         answer: "1",
     }, {
@@ -69,7 +69,7 @@ $(document).ready(function () {
         choices: ["Manila Luzon", "Raven", "Jujubee", "Raja"],
         answer: "3",
     }, {
-        question: "Season 4 of Drag Race was full of legendary dramatic moments. One such moment was in the werkroom between rivals Phi Phi O’Hara and Sharon Needles, in which Needles calls O’Hara a ___ ___ ___ and O’Hara tells Needles to “go back to ___ ___” where she belongs.",
+        question: "Season 4 of Drag Race was full of legendary dramatic moments. One such moment was in the werkroom between rivals Phi Phi O’Hara and Sharon Needles, in which Needles calls O’Hara a ___ and O’Hara tells Needles to “go back to ___” where she belongs.",
         choices: ["Two-Faced B*tch; The Cemetery", "Ashy Clown Queen; The Circus", "Tired Ass Showgirl; Party City", "Cheap Oompa Loompa; Pizza Hut"],
         answer: "2",
     }, {
@@ -82,7 +82,7 @@ $(document).ready(function () {
         answer: "3",
     }, {
         question: "Who is the only queen to ever have been disqualified from RuPaul’s Drag Race?",
-        choices: ["Kelly Mantle", "Naysha Lopez", "Willam", "Naysha Lopez"],
+        choices: ["Kelly Mantle", "Naysha Lopez", "Willam", "Cynthia Lee Fontaine"],
         answer: "2",
     }, {
         question: "Who is the best drag queen among all Rupaul's Drag Race contestants?",
@@ -93,7 +93,7 @@ $(document).ready(function () {
     //Make questions and choices appear on the DOM
     function loadQA() {
         // if not all questions were answers 
-        if (questionIndex <= questions.length) {
+        if (questionIndex < questions.length) {
             //display question
             $("#question").html(questions[questionIndex].question);
             // display choices
@@ -129,13 +129,15 @@ $(document).ready(function () {
             if (countDown === -1) {
                 clearInterval(timer);
                 $("#question, #choices, #timeRemaining").hide();
+                var oops = "Well gurl, you betta WERK faster next time 💁‍";
+                $("#congrats").text(oops);
             }
 
-            else if (questionIndex === questions.length) {
+            if (questionIndex === questions.length) {
                 clearInterval(timer);
                 $("#question, #choices, #timeRemaining").hide();
-                alert("Condragulation You Have Finished Rupaul's Drag Race Trivia 💅")
-                alert("You got" + correctAnswer + "answers and" + inCorrectAnswer + "answers")
+                var congrats = "ConDRAGtulation! You have finished RuPaul's Drag Race trivia 💅 "
+                $("#congrats").text(congrats);
             }
             //show score count
             scoreCount();
@@ -168,10 +170,9 @@ $(document).ready(function () {
 
         // move to the next quesion
         questionIndex++;
-        // run the loadQA function to start 
         loadQA();
-
     })
+
 
     //Counting score
     function scoreCount() {
@@ -189,7 +190,7 @@ $(document).ready(function () {
         $("#correct").html(correctAnswer);
         $("#incorrect").html(inCorrectAnswer);
     }
-
+    
     // Function to restart the game (restart button)
     $("#restart").click (function restartGame() {
         location.reload();
