@@ -77,12 +77,14 @@ p{
     #question{
         width: 100%;
         margin-left: 2px;
+        text-align: left;
     }
     #congrats{
         margin-left: 5px;
         display: block;
         width: 100%;
         font-size: 20px;
+        text-align: left;
     }
     .multipleChoice{
         margin-left: 2px;
