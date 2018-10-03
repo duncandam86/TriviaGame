@@ -15,11 +15,13 @@
     font-style: italic;
     font-size: 17px;
     margin-right: 100px;
+    margin-bottom:-20px;
 }
 #play{
     color: red;
     font-size: 18px;
     margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 #restart{
