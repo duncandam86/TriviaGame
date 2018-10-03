@@ -46,7 +46,7 @@
 #question{
     font-size: 18px;
     color: rgb(218, 21, 224);
-    display: inline-block;
+    display: block;
     width: 700px;
 }
 
@@ -62,4 +62,35 @@
 p{
     font-size: 18px;
     color: rgb(218, 21, 224);
+}
+
+/*
+  These rules take effect when the browser's width is either 420px or less.
+*/
+@media screen and (max-width: 420px) {
+    body[background]{
+        width: 100%;
+    }
+    #h3timeRemaining{
+        margin-left: 5px;
+    }
+    #question{
+        width: 100%;
+        margin-left: 2px;
+    }
+    #congrats{
+        margin-left: 5px;
+        display: block;
+        width: 100%;
+    }
+    .multipleChoice{
+        margin-left: 2px;
+    }
+    #pResults{
+        margin-left: 5px;
+    }
+    
+    p{
+        margin-left: 5px;
+    }
 }

@@ -5,7 +5,7 @@ $(document).ready(function () {
     var inCorrectAnswer = 0;
     var unAnswer;
     var questionIndex = 0;
-    var countDown = 90; //time countdown in second
+    var countDown = 15; //time countdown in second
 
     //make array of objects for questions
     var questions = [{
