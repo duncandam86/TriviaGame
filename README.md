@@ -4,7 +4,7 @@
 **https://duncandam86.github.io/TriviaGame/**
 
 ### Description:
-* Trivia Game about one of my favorite television shows "RuPaul's Drag Race".
+* This Trivia Game is created based on one of my favorite television shows "RuPaul's Drag Race".
 * You can start the game by "Start Your Engine!".
 * You have 90 seconds to answer 20 questions.
 * You will get an happy alert for correct answers and a super "sassy" alert for incorrect answers.
